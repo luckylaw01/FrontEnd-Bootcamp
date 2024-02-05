@@ -1,0 +1,160 @@
+.form-container{
+    box-shadow: 3px 3px 6px #333333;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    padding-top: 20px;
+}
+
+.signup-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+
+/* ------- sign-up form --------------- */
+.signup-image{
+    width: 50%;
+}
+
+.formm-container .signup-content .signin-image img{
+    width: 100%;
+}
+
+.signup-form {
+    width: 500px;
+    margin: 50px auto;
+    background-color: transparent;
+    padding: 30px;
+    border-radius: 10px;
+    /* box-shadow: 2px 2px 4px #33333350; */
+}
+
+.form-title {
+    color: #24788f;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: none;
+    border-bottom: 1px solid #333;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+input[type="checkbox"]{
+    margin-left: 70px;
+}
+
+.form-group i {
+    color: #333;
+}
+
+.form-button {
+    text-align: center;
+}
+
+.form-submit {
+    background-color: #24788f;
+    color: #ffffff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.form-submit:hover {
+    opacity: 0.8;
+}
+
+.agree-term {
+    margin-right: 5px;
+}
+
+.label-agree-term {
+    font-size: 14px;
+    color: #333;
+}
+
+.term-service {
+    color: #24788f;
+    text-decoration: none;
+}
+
+.term-service:hover {
+    text-decoration: underline;
+}
+
+.center-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.social-login ul{
+    list-style: none;
+}
+
+.social-login ul li{
+    padding: 10px 20px;
+    background-color: #24788f80;
+    border-radius: 5px;
+    display: inline;
+    margin-right: 5px;
+}
+
+.social-login ul li i{
+    color: #f3f3f3;
+    font-size: 1.2em;
+}
+
+.social-login ul li:last-of-type{
+    border: none;
+}
+
+.search-button{
+    right: 10px;
+}
+
+header .container .welcome-message{
+    padding: 5px 10px;
+}
+
+header .container .welcome-message p{
+    color: #333;
+    font-size: 1.2;
+    font-weight: 600;
+}

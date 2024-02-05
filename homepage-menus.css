@@ -1,0 +1,99 @@
+.left-side-bar{
+    background-color: #E1D9D1;
+    width: 20%;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 10vh;
+    z-index: 1;
+}
+
+.menu-toggler{
+    display: none;
+}
+
+.left-side-bar .profile-preview, .left-side-bar .menu{
+    background-color: #f3f3f3;
+    width: 80%;
+    margin: auto;
+    padding: 10px 5px;
+    display: flex;
+}
+
+.profile-preview img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile-preview-details{
+    padding: 0 5px;
+}
+
+.profile-preview p{
+    font-size: 1.2em;
+}
+
+.profile-preview a, .left-side-bar ul li a{
+    text-decoration: none;
+    font-size: 0.8em;
+    color: #83941f;
+}
+
+.profile-preview a:hover, .left-side-bar ul li a:hover{
+    opacity: 0.8;
+}
+
+.left-side-bar .menu{
+    background-color: #24788f;
+    height: 90%;
+}
+
+.left-side-bar ul{
+    list-style: none;
+}
+
+.left-side-bar ul li{
+    border-bottom: 1px solid #f3f3f3;
+    padding: 10px 5px;
+}
+
+.left-side-bar ul li:last-of-type{
+    border-bottom: none;
+}
+
+.left-side-bar ul li a{
+    color: #f3f3f3;
+    font-size: 1.2em;
+}
+
+.actions{
+    position: absolute;
+    bottom: 20px;
+    width: 70%;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.actions i{
+    color: #f3f3f3;
+    font-size: 1.5em;
+    padding: 0 15px;
+
+    border-right: 1px solid #f3f3f3;
+    transition: all;
+}
+
+.actions i:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.menu .actions I:last-of-type{
+    border-right: 0;
+}
+
+

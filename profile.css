@@ -1,0 +1,127 @@
+/* Profile Card */
+.profile-card {
+    max-width: 600px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Card Heading */
+.profile-card-heading {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+
+.profile-card-heading p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.profile-card-heading span {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.profile-card-heading img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: auto;
+}
+
+/* Profile Card Body */
+.profile-card-body {
+    padding: 20px;
+}
+
+.profile-cover-photo img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile-details {
+    margin-bottom: 20px;
+}
+
+.profile-detail-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+}
+
+.profile-label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    flex: 1;
+}
+
+.profile-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    
+    margin-bottom: 10px;
+    flex: 1;
+    
+}
+
+.profile-email,
+.profile-country,
+.profile-specialization-field,
+.profile-date-registered {
+    font-size: 16px;
+    color: #05203d;
+}
+
+/* Profile Footer */
+.profile-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-footer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.profile-footer button:hover {
+    background-color: #0056b3;
+}
+
+/* Font Awesome Icons */
+.profile-label i {
+    margin-right: 5px;
+}
+
+
+.page-title{
+    padding: 10px 20px;
+    background-color: #2e9ab8;
+    border-top: 1px solid #f5f5f5;
+}
+
+.page-title P{
+    width: 80%;
+    margin: auto;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2em;
+}

@@ -4,6 +4,8 @@ body, h1, h2, h3, p, margin, padding {
     padding: 0;
 }
 
+
+
 * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -11,7 +13,9 @@ body, h1, h2, h3, p, margin, padding {
 
 /* Style for the header */
 header {
-    background-color: #E1D9D1;
+    /* background-color: #E1D9D1; */
+    /* background-color: #2e9ab8; */
+    background-color: #2e9ab8;
     height: 10vh;
     color: #ffffff; /* Text color */
     padding: 10px 0; /* Adjust padding as needed */
@@ -27,15 +31,7 @@ header {
 }
 
 
-.welcome-content{
-    border: 1px solid #ffffff;
-    padding: 20px;
-    height: 85%;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
 .menu-and-search{
     display: flex;
@@ -47,7 +43,13 @@ header {
     width: 40px; /* Adjust size as needed */
     height: auto;
     cursor: pointer;
-    margin: 0 4px 0 4px;
+    margin: 0 16px 0 0;
+    
+}
+
+.hamburger-menu i{
+    font-size: 2.4rem;
+    font-weight: bold;
 }
 
 .hamburger-menu:hover{
@@ -58,8 +60,10 @@ header {
 .search-bar {
     display: flex;
     align-items: center;
-    width: 150px;
+    width: 200px;
 }
+
+
 
 .search-bar input:focus{
     background-color:rgb(209, 251, 237);
@@ -68,7 +72,7 @@ header {
 
 /* Style for the search input */
 .search-bar input[type="text"] {
-    padding: 6px 8px;
+    padding: 10px 8px 10px 30px;
     border: none;
     border-radius: 5px;
     margin-right: 8px;
@@ -77,16 +81,15 @@ header {
 
 /* Style for the search button */
 .search-button {
-    background-color: #f5f5f5;
+    background-color: #fff;
     border: none;
     cursor: pointer;
     position: absolute;
-    right: -33px;
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 5px 0 0 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 64%;
+    height: 90%;
     z-index: 1;
 }
 
@@ -106,7 +109,7 @@ header {
 
 /* Style for the logo */
 .logo {
-    width: 100px; /* Adjust size as needed */
+    width: 200px; /* Adjust size as needed */
     height: auto;
 }
 
@@ -114,25 +117,35 @@ header {
 .login-btn{
     background-color: #fff;
     border: none;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
     border-radius: 5px;
-    color: #181212;
+    color: #24788f;
     cursor: pointer;
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    transition: all 0.15s;
-    box-shadow: 2px 2px 4px #33333325;
 }
 
+
+
+.login-btn img{
+    padding: 5px 0;
+}
+
+.login-btn a{
+    text-decoration: none;
+    color: #181212;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
 
 .welcome button:hover, .login-btn:hover{
-    background-color: #24788f50;
+    opacity: 0.8;
     color: #fff;
 }
 
-.login-btn:hover i{
-    color: #fff;
-}
+
 
 .notifications-button{
    border-radius: 5px;
@@ -179,21 +192,39 @@ header {
 
 
 .welcome {
+    /* background-color: #2e9ab8; */
+    background-color: #000000;
+    background-image: url('images/1027-scaled.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 40px;
-    background-color: #f0f0f0;
     height: 90vh;
 
     position: absolute;
     top: 10vh;
+    bottom: 0;
     left: 0;
+    right: 0; 
+}
+
+.welcome::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
     right: 0;
+    z-index: -1;
+    background-color: #00000080;
 }
 
 /* Welcome animation */
-.welcome {
+/* .welcome {
     background: linear-gradient(45deg, #0a66c2, #83941f, #e7a33e, #f5987e, #56687a, #0a66c2);
 
     background-size: 400% 400%;
@@ -210,63 +241,79 @@ header {
     100% {
       background-position: 0% 50%;
     }
-  }
+  } */
 
-  
-
-/* Style for the text content */
-.welcome div:nth-child(1) {
-    max-width: 600px; 
+.welcome-content{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    padding: 20px;
 }
 
-/* Style for the heading */
-.welcome h1 {
-    font-size: 2.5em; 
-    color: #333;
-    padding: 10px 0;
-    text-shadow: 2pxx 2px 4px #fff;
+.welcome-content, .welcome-image{
+    width: 50%;
+    border: 1px solid #fff;
+    height: 90%;
 }
 
-/* Style for the paragraph */
-.welcome p {
-    font-size: 1.2em;
-    color: #555;
-    padding: 20px 0;
+.welcome-image img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
 }
 
-/* Style for the button */
+
+.welcome-content h1{
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.welcome p{
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
 .welcome button {
-    background-color: #fff; 
-    color: #181212;
-    padding: 15px 20px; 
+    background-color: #f0f0f0; 
+    color: #2e9ab8;
+    padding: 15px 30px; 
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 1.2em; 
-    text-decoration: none;
     cursor: pointer; 
-    margin-top: 20px;
-    box-shadow: 5px 4px 10px #33333350;
+    box-shadow: 5px 4px 10px #00000050;
+    max-width: 40%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.15s;
 }
 
 .welcome button a{
     text-decoration: none;
-    color: #181212;
+    font-size: 1.5rem;
+    font-weight: 600;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-.welcome button:hover a{
-    color: #ffffff;
+.welcome button a img{
+    margin-left: 10px;
 }
 
-.welcome button img{
-    width: 20px;
-  }
+.welcome button:hover a img{
+    position: relative;
+    left: 10px;
+}
+
   
 
-.welcome img {
-    max-width: 100%; 
-    height: auto;   
-}
 
 /* ------------Section header----------- */
 
@@ -684,6 +731,7 @@ hr{
     background-color: #E1D9D1; /* Set the background color */
     padding: 40px 20px; /* Adjust padding as needed */
     color: #333; /* Set text color */
+    margin-top: 10px;
 }
 
 /* Styles for the footer columns */
@@ -740,4 +788,135 @@ hr{
 .uwdps-footer .copyright-message p {
     font-size: 0.9em;
     font-weight: 600;
+}
+
+.obj-button a{
+    text-decoration: none;
+}
+
+.page-title{
+    padding: 10px 20px;
+    background-color: #2e9ab8;
+    border-top: 1px solid #f5f5f5;
+    position: sticky;
+    top: 0;
+}
+
+.page-title P{
+    width: 80%;
+    margin: auto;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+
+/* -----------------------------Track Progress----------------------------- */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+.progress-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress-container h2 {
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 10px;
+    padding: 5px 0;
+}
+
+.select-container {
+    margin-bottom: 20px;
+    
+}
+
+.select-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.progress-steps {
+    list-style: none;
+    padding: 0;
+}
+
+.progress-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.progress-step .step-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.progress-step .step-details {
+    flex: 1;
+}
+
+.progress-step .step-details p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.progress-step .step-details .step-status {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.progress-step .step-status.complete::before {
+    content: '\f058'; /* Font Awesome check icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 24px;
+    color: #4CAF50;;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.current-patent-title{
+    padding: 10px 0;
+    border-top: 1px solid #333;
+    background-color: #f4f4f4;
+    color: #313335;
+}
+
+.view-curent-patent-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.view-curent-patent-button:hover {
+    background-color: #45a049; /* Darker Green */
+}
+
+.view-curent-patent-button:active {
+    background-color: #3e8e41; /* Even Darker Green */
 }

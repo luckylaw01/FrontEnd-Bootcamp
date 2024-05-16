@@ -1,3 +1,20 @@
+<?php
+include 'includes/database.php';
+session_start();
+
+
+
+    if(isset($_SESSION['sessionid'])){
+        echo '
+        <div id="alert" class="alert">
+        <h2>You are already logged in</h2>
+    </div>
+        ';
+        header('Location: log-out.php');
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,24 +30,29 @@
     <script src="homepage-script.js" defer></script>
 </head>
 <body>
-    <header>
+<header>
         <div class="container">
             <div class="menu-and-search">
-                <img id="menu-bar" src="images/hamburger-menu-icon-png-white-8.jpg" alt="" class="hamburger-menu">
+            <div id="menu-bar" class="hamburger-menu"><i class="fa-solid fa-bars"></i></div>
+            <!-- <img  src="images/hamburger-menu-icon-png-white-8.jpg" alt="" class="hamburger-menu"> -->
                 <div class="search-bar">
                     <input type="text" placeholder="Search patents">
                     <button class="search-button"><img src="images/search.png" alt=""></button>
                 </div>
             </div>
             
-            <img src="images/logo.png" alt="" class="logo">
-            <!-- <button class="login-btn" type="button"><img src="images/right-arrow.png" alt=""><span>Log In</span></button> -->
-            <div class="welcome-message"><p>Welcome / Sign in</p></div>
-
+            <a href="index.php"><img src="images/uwdps logo.png" alt="" class="logo"></a>
+            <div class="header-buttons">
+                <a href="notifications.php"><button class="login-btn notifications-button"><i class="fa-solid fa-bell"></i>
+                    </a>
+                </button>
+                <button class="login-btn" type="button"><a href="log-out.php"><img src="images/logout1.png" alt=""><span>Log In</span></a></button>
+            </div>
         </div>
     </header>
 
-    <div class="left-side-bar menu-toggle" id="left-side-bar">
+    <div class="page-title"><p>UWDPS / Accounts / Login</p></div>
+    <div class="left-side-bar menu-toggle menu-toggler" id="left-side-bar">
         <!-- <div class="profile-preview">
             <img src="images/user-1.png" alt="user-1">
             <div class="profile-preview-details">
@@ -63,10 +85,13 @@
                 </li> -->
 
                 <li>
-                    <a href="">Log in</a>
+                    <a href="#">Log in</a>
                 </li>
                 <li>
-                    <a href="">Contact us</a>
+                    <a href="index.php">Home</a>
+                </li>
+                <li>
+                    <a href="contact-us.php">Contact us</a>
                 </li>
             </ul>
 
@@ -85,26 +110,26 @@
                 <div class="signin-content signup-content">
                     <div class="signin-image signup-image">
                         <figure><img src="images/signin-image.jpg" alt="sing up image"></figure>
-                        <a id="menu-bar" href="sign-up.html" class="signup-image-link">Create an account</a>
+                        <a id="menu-bar" href="sign-up.php" class="signup-image-link">Create an account</a>
                     </div>
                     
                     <div class="signin-form signup-form">
                         <h2 class="form-title">Log In</h2>
-                        <form method="POST" class="register-form" id="login-form">
+                        <form action="includes/login-auth.php" method="POST" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_email"><i class="fas fa-envelope"></i></label>
-                                <input type="email" name="your_email" id="your_email" placeholder="Your Email"/>
+                                <input type="email" name="email" id="your_email" placeholder="Your Email"/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="fas fa-lock"></i></label>
-                                <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                                <input type="password" name="pass" id="your_pass" placeholder="Password"/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
                                 <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                                <input type="submit" name="submit" id="signin" class="form-submit" value="Log in"/>
                             </div>
                         </form>
                         <div class="social-login">
@@ -122,5 +147,6 @@
 
     </div>
 
-</body>
-</html>
+<?php 
+    include 'includes/footer.php';
+?>

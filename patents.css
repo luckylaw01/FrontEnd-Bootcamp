@@ -1,0 +1,153 @@
+.ocontainer{
+    margin: auto;
+    width: 80%;
+
+    display: flex;
+    justify-content: center;    
+}
+
+.patent-certificates{
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+}
+
+.patent-certificate {
+    width: 300px;
+    height: 550px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    background-image: url('images/cert-background2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.top-left img {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.top-right img {
+    float: right;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.heading {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.heading h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.heading i {
+    color: #24788f;
+}
+
+.details {
+    margin-bottom: 20px;
+}
+
+.details p, .title-heading{
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.awarded-to p, .details p strong,.certificate .title-heading{
+    display: block;
+    text-align: center;
+    font-weight: 500;
+    padding: 2px 0;
+}
+
+.patent-certificate .title-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.patent-certificate .title-wrapper .title-heading{
+    background-color: #fff;
+    border: 1px solid #33333350;
+    width: fit-content;
+    padding: 5px 20px;
+    border-radius: 5px;
+
+}
+
+.details p span{
+    font-size: 1.2rem;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.title h2 {
+    font-size: 20px;
+    color: #24788f;
+}
+
+.field,
+.awarded-to,
+.together-with,
+.approval {
+    margin-bottom:5px;
+}
+
+.field p,
+.awarded-to p,
+.together-with p,
+.approval p {
+    color: #333;
+    font-size: 14px;
+}
+
+.field strong,
+.awarded-to strong,
+.together-with strong {
+    font-weight: bold;
+    color: #24788f;
+}
+
+.approval{
+    border-top: 1px solid #333333;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}

@@ -1,3 +1,7 @@
+<?php
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,24 +16,29 @@
     <link rel="stylesheet" href="homepage-menus.css">
 </head>
 <body>
-    <header>
+<header>
         <div class="container">
             <div class="menu-and-search">
-                <img id="menu-bar" src="images/hamburger-menu-icon-png-white-8.jpg" alt="" class="hamburger-menu">
+            <div id="menu-bar" class="hamburger-menu"><i class="fa-solid fa-bars"></i></div>
+            <!-- <img  src="images/hamburger-menu-icon-png-white-8.jpg" alt="" class="hamburger-menu"> -->
                 <div class="search-bar">
                     <input type="text" placeholder="Search patents">
                     <button class="search-button"><img src="images/search.png" alt=""></button>
                 </div>
             </div>
             
-            <img src="images/logo.png" alt="" class="logo">
-            <!-- <button class="login-btn" type="button"><img src="images/right-arrow.png" alt=""><span>Log In</span></button> -->
-            <div class="welcome-message"><p>Welcome / Sign up</p></div>
-
+            <a href="index.php"><img src="images/uwdps logo.png" alt="" class="logo"></a>
+            <div class="header-buttons">
+                <a href="notifications.php"><button class="login-btn notifications-button"><i class="fa-solid fa-bell"></i>
+                    <p>1</p></a>
+                </button>
+                <button class="login-btn" type="button"><a href="log-out.php"><img src="images/logout1.png" alt=""><span>Log In</span></a></button>
+            </div>
         </div>
     </header>
 
-    <div class="left-side-bar menu-toggle" id="left-side-bar">
+    <div class="page-title"><p>UWDPS / Accounts / Sign up</p></div>
+    <div class="left-side-bar menu-toggle menu-toggler" id="left-side-bar">
         <!-- <div class="profile-preview">
             <img src="images/user-1.png" alt="user-1">
             <div class="profile-preview-details">
@@ -62,10 +71,13 @@
                 </li> -->
 
                 <li>
-                    <a href="">Log in</a>
+                    <a href="login.php">Log in</a>
                 </li>
                 <li>
-                    <a href="">Contact us</a>
+                    <a href="index.php">Home</a>
+                </li>
+                <li>
+                    <a href="contact-us.php">Contact us</a>
                 </li>
             </ul>
 
@@ -85,10 +97,14 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        <form action="includes/register-auth.php" method="POST" class="register-form" id="register-form">
                             <div class="form-group">
-                                <label for="name"><i class="fas fa-user"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name"/>
+                                <label for="firstname"><i class="fas fa-user"></i></label>
+                                <input type="text" name="firstname" id="firstname" placeholder="First Name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname"><i class="fas fa-user"></i></label>
+                                <input type="text" name="lastname" id="lastname" placeholder="Last Name"/>
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="fas fa-envelope"></i></label>
@@ -107,14 +123,14 @@
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                                <input type="submit" name="submit" id="signup" class="form-submit" value="Register"/>
                             </div>
                         </form>
                     </div>
                     </div>
                     <div class="signup-image center-div">
                         <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
-                        <a href="login.html" class="signup-image-link">I am already member</a>
+                        <a href="login.php" class="signup-image-link">I am already member</a>
                     </div>
                 </div>
             </div>

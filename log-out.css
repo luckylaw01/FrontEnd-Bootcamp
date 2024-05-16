@@ -1,0 +1,38 @@
+.log-out-message{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+
+}
+
+.log-out-message p{
+    color: #333;
+    font-size: 1.5em;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.logout-btn{
+    color: #f3f3f3;
+    font-weight: 600;
+}
+
+.back-btn{
+    position: absolute;
+    top: 20vh;
+    left: 100px;
+
+    border: 1px solid #2e9ab8;
+    color: #2e9ab8;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.back-btn:hover{
+    background-color: #2e9ab8;
+    color: #f3f3f3;
+    cursor: pointer;
+}

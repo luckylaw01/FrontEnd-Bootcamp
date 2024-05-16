@@ -1,3 +1,26 @@
+<?php
+     include 'includes/database.php';
+     //include 'includes/login-auth.php';
+    session_start();
+    
+
+    if (isset($_SESSION['sessionid']))
+    {
+        $sessionId = $_SESSION['sessionid'];
+        include 'includes/select.php';
+        $currentUser = selectUsers($conn, 'user_id', $sessionId);
+        $currentUserName = $currentUser[0]['first_name'] . " " . $currentUser[0]['last_name'];
+        $dateRegistered = $currentUser[0]['date_registered'];
+        $email = $currentUser[0]['email'];
+        $country = $currentUser[0]['country'];
+        $fieldOfSpecialization = $currentUser[0]['field_of_specialization'];
+        $profilePhotoUrl = $currentUser[0]['profile_photo'];
+    }
+
+    
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,26 +31,112 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="homepage-menus.css">
     <script src="homepage-script.js" defer></script>
+    <script src="app.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="menu-and-search">
-                <img id="menu-bar" src="images/hamburger-menu-icon-png-white-8.jpg" alt="" class="hamburger-menu">
-                <div class="search-bar">
-                    <input type="text" placeholder="Search patents">
-                    <button class="search-button"><img src="images/search.png" alt=""></button>
+
+<?php
+
+    if (isset($_SESSION['sessionid']))
+    {
+        include 'includes/create-notification.php';
+
+        echo '
+        <header>
+            <div class="container">
+                <div class="menu-and-search">
+                <div id="menu-bar" class="hamburger-menu"><i class="fa-solid fa-bars"></i></div>
+                <!-- <img  src="images/hamburger-menu-icon-png-white-8.jpg" alt="" class="hamburger-menu"> -->
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search patents">
+                        <button class="search-button"><img src="images/search.png" alt=""></button>
+                    </div>
+                </div>
+                
+                <a href="index.php"><img src="images/uwdps logo.png" alt="" class="logo"></a>
+                <div class="header-buttons">
+                    <a href="notifications.php"><button class="login-btn notifications-button"><i class="fa-solid fa-bell"></i>
+                        <p>'.$newNotifications.'</p></a>
+                    </button>
+                    <button class="login-btn" type="button"><a href="log-out.php"><span>Log out</span><img src="images/logout1.png" alt=""></a></button>
                 </div>
             </div>
-            
-            <img src="images/logo.png" alt="" class="logo">
-            <button class="login-btn" type="button"><img src="images/right-arrow.png" alt=""><span>Log In</span></button>
+        </header>
+        ';
+    
 
+
+
+    echo '
+    <div class="left-side-bar menu-toggle menu-toggler" id="left-side-bar">
+     <div class="profile-preview">
+        <img src="<?php echo $profilePhotoUrl; ?>" alt="user-1">
+        <div class="profile-preview-details">
+            <p class="profile-user-name"><?php echo $currentUserName; ?></p>
+            <a href="">view profile</a>
         </div>
-    </header>
+    </div> 
 
 
-    <div class="left-side-bar menu-toggle" id="left-side-bar">
+    <div class="menu">
+        <ul>
+
+            <li>
+                <a href="homepage.php">User Dashboard</a>
+            </li>
+            <li>
+                <a href="patents.php">View Patents</a>
+            </li>
+            <li>
+                <a href="all-patents.php">Blog</a>
+            </li>
+            
+            <li>
+                <a href="patent-application.php">Apply now</a>
+            </li>
+            <li>
+                <a href="contact-us.php">Contact us</a>
+            </li>
+        </ul>
+
+        <div class="actions">
+            <i class="fa-solid fa-gear"></i>
+            <i class="fa-brands fa-accessible-icon"></i>
+            <i class="fa-solid fa-download"></i>
+        </div>
+    </div>
+</div>
+    ';
+
+    }
+
+    else{
+
+        echo '
+        <header>
+            <div class="container">
+                <div class="menu-and-search">
+                <div id="menu-bar" class="hamburger-menu"><i class="fa-solid fa-bars"></i></div>
+                <!-- <img  src="images/hamburger-menu-icon-png-white-8.jpg" alt="" class="hamburger-menu"> -->
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search patents">
+                        <button class="search-button"><img src="images/search.png" alt=""></button>
+                    </div>
+                </div>
+                
+                <a href="index.php"><img src="images/uwdps logo.png" alt="" class="logo"></a>
+                <div class="header-buttons">
+                    <a href="notifications.php"><button class="login-btn notifications-button"><i class="fa-solid fa-bell"></i>
+                        </a>
+                    </button>
+                    <button class="login-btn" type="button"><a href="log-out.php"><img src="images/logout1.png" alt=""><span>Log In</span></a></button>
+                </div>
+            </div>
+        </header>
+        ';
+
+        echo'
+        <div class="left-side-bar menu-toggle menu-toggler" id="left-side-bar">
         <!-- <div class="profile-preview">
             <img src="images/user-1.png" alt="user-1">
             <div class="profile-preview-details">
@@ -60,10 +169,10 @@
                 </li> -->
 
                 <li>
-                    <a href="">Log in</a>
+                    <a href="login.php">Log in</a>
                 </li>
                 <li>
-                    <a href="">Contact us</a>
+                    <a href="contact-us.php">Contact us</a>
                 </li>
             </ul>
 
@@ -74,6 +183,14 @@
             </div>
         </div>
     </div>
+        ';
+    }
+?>
+
+    
+
+
+    
 
 
     <main class="main-content">
@@ -83,7 +200,16 @@
                 <div class="welcome-content">
                     <h1>File your Patent with ease</h1>
                     <p>With the Universal Web-3 Open-source Digital Patenting system. Track your patenting progress and get full proof protection from patent trolling through blockchain integration</p>
-                    <button type="button"><a href="">Get started <img src="images/right-arrow.png" alt=""></a></button>
+
+                    <?php
+                        if (isset($_SESSION['sessionid'])){
+                            echo'<button type="button"><a href="homepage.php">Get started <img src="images/right-arrow.png" alt=""></a></button>';
+                        }
+                        else{
+                            echo'<button type="button"><a href="login.php">Get started <img src="images/right-arrow.png" alt=""></a></button>';
+                        }
+                    ?>
+
                 </div>
                 <div class="welcome-image">
                     <img src="images/31ad4c76244561.5c90a7fe64754.gif" alt="Welcome">
@@ -104,7 +230,7 @@
                 <img src="images/writting.jpg" alt="Apply">
             </div>
             <div class="home-card-content">    
-                <h2>Easy Application</h2>
+                <h2>An application you can complete anywere, a review that get's back to you in no time! Patent your life</h2>
                 <p>Enjoy a seamless application from the   palm of your hand,
                     Let the world recognize your invention because you deserve it.
                     With every tap and swipe, you'll be in command,
@@ -242,51 +368,8 @@
         </div>
     </main>
 
-    <footer class="uwdps-footer">
-        <div class="container">
-            <div class="footer-column">
-                <h3>About UWDPS</h3>
-                <ul>
-                    <li><a href="#">Mission</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Partnerships</a></li>
-                </ul>
-            </div>
-        
-            <div class="footer-column">
-                <h3>Patenting Process</h3>
-                <ul>
-                    <li><a href="#">How it Works</a></li>
-                    <li><a href="#">Guidelines</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-        
-            <div class="footer-column">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">Tutorials</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-        
-            <div class="footer-column">
-                <h3>Connect with Us</h3>
-                <ul class="social-media-icons">
-                    <li><a href="#" class="fa-brands fa-facebook"></a></li>
-                    <li><a href="#" class="fa-brands fa-twitter"></a></li>
-                    <li><a href="#" class="fa-brands fa-linkedin"></a></li>
-                    <li><a href="#" class="fa-brands fa-instagram"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    
-        <div class="copyright-message">
-            <p>&copy; 2024 UWDPS. All rights reserved.</p>
-        </div>
-    </footer>
 
-    
-</body>
-</html>
+
+    <?php
+        include 'includes/footer.php';
+    ?>

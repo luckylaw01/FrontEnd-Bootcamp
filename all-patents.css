@@ -1,0 +1,154 @@
+main .ocontainer{
+    flex-direction: column;
+}
+
+.ocontainer .section-header{
+    width: 100%;
+    border: none;
+}
+
+.ocontainer .section-header button {
+    /* Basic styling */
+    padding: 10px 20px;
+    border: none;
+    
+    font-size: 16px;
+    cursor: pointer;
+    min-width: 100px;
+    border-right: 1px solid;
+    /* Primary color */
+    background-color: #24788f;
+    color: #fff;
+    margin-left: -5px;
+  
+    /* Hover effect */
+    transition: background-color 0.3s ease;
+  }
+  .ocontainer .section-header button:hover {
+    background-color: #333;
+  }
+  
+  /* Active effect */
+  .ocontainer .section-header button:active {
+    background-color: #19505a;
+  }
+  
+
+  .blockchain-wrapper {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    background-image: url('images/blockchain-background1.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    border-radius: 5px;
+
+}
+
+.blockchain-container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    border: 2px solid #24788f;
+    border-radius: 5px;
+
+    height: 320px;
+    display: flex;
+    align-items: center;
+}
+
+.blockchain {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.block {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px; /* Adjust width as needed */
+    margin-right: 20px; /* Adjust margin as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.block p {
+    margin: 0;
+    padding: 5px 0;
+    text-align: center;
+    color: #333;
+    overflow: hidden;
+}
+.blockchain-header{
+    font-weight: 500;
+    padding: 10px 0;
+}
+
+.block .ipc-id, .block .approval-agent{
+    background-color: #24788f;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.block .approval-agent{
+    border-radius: 0 0 5px 5px;
+}
+
+.block-patent-owner span, .chain-date{
+ opacity: 0.8;
+}
+
+.block .chain-date span{
+    opacity: 1;
+    color: #000;
+}
+
+.block .block-patent-title{
+    font-size: 1.3rem;
+    color: #24788f;
+}
+
+.blockchain h2 {
+    margin-top: 0;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    height: 100%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+    width: 50px;
+    
+}
+
+.prev-btn {
+    left: 0;
+    border-radius: 5px 0 0 5px;
+    color: #fff;
+    font-size: 1.5rem;
+    border-right: 1px solid #fff;
+}
+
+.next-btn {
+    right: 0;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+    font-size: 1.5rem;
+    
+    border-left: 1px solid #fff;
+}
+

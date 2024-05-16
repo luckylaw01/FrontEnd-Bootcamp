@@ -1,0 +1,63 @@
+/* Main container */
+#notificationMain {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+/* Notification container */
+.notification-list {
+    display: grid;
+    gap: 20px;
+}
+
+/* Individual notification */
+.notification {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Notification title */
+.notification h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+    align-self: start;
+    margin-bottom: 10px;
+}
+
+/* Notification content */
+.notification p {
+    margin: 10px 0;
+}
+
+/* Notification timestamp */
+.notification small {
+    color: #888;
+    font-size: 12px;
+}
+
+/* Dismiss button */
+.dismiss-btn {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dismiss-btn:hover {
+    background-color: #cc0000;
+}

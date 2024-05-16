@@ -8,3 +8,21 @@ function menuToggler(){
 menuBar.addEventListener("click", function(){
     menuToggler();
 });
+
+const editProfile = document.getElementById('edit-profile');
+editProfile.addEventListener('click', () => {
+    window.location.href = "profile.php";
+});
+
+function alertNow(message){
+    const animatedAlert = document.querySelector(".animated-alert");
+    animatedAlert.style.display = "block";
+    animatedAlert.textContent = message;
+                
+                setTimeout(() => {
+                    document.querySelector(".animated-alert").style.display = "none";
+            }, 5000);
+
+    }
+
+    alertNow("You have new notifications");
